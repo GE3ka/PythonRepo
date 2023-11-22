@@ -1,0 +1,31 @@
+insert into dojos (name,created_at,updated_at) values('first dojo',now(),now());
+insert into dojos (name,created_at,updated_at) values('second dojo',now(),now());
+insert into dojos (name,created_at,updated_at) values('third dojo',now(),now());
+SET SQL_SAFE_UPDATES = 0;
+delete from dojos;
+insert into dojos (name,created_at,updated_at) values('dojo 1',now(),now());
+insert into dojos (name,created_at,updated_at) values('dojo 2',now(),now());
+insert into dojos (name,created_at,updated_at) values('dojo 3',now(),now());
+
+
+insert into ninjas (first_name, last_name, age,created_at,updated_at,dojo_id) values ('jose','marianna',18,now(),now(),1);
+insert into ninjas (first_name, last_name, age,created_at,updated_at,dojo_id) values ('marie','doe',20,now(),now(),1);  
+insert into ninjas (first_name, last_name, age,created_at,updated_at,dojo_id) values ('fluffy','harry',22,now(),now(),1); 
+
+insert into ninjas (first_name, last_name, age,created_at,updated_at,dojo_id) values ('coco','madrigal',23,now(),now(),2);
+insert into ninjas (first_name, last_name, age,created_at,updated_at,dojo_id) values ('monkey','de luffy',23,now(),now(),2);
+insert into ninjas (first_name, last_name, age,created_at,updated_at,dojo_id) values ('bruno','felix',23,now(),now(),2);
+
+insert into ninjas (first_name, last_name, age,created_at,updated_at,dojo_id) values ('luisa','madrigal',30,now(),now(),3);
+insert into ninjas (first_name, last_name, age,created_at,updated_at,dojo_id) values ('isabella','mirabel',35,now(),now(),3);
+insert into ninjas (first_name, last_name, age,created_at,updated_at,dojo_id) values ('joe','donnow',17,now(),now(),3);
+
+
+select * from ninjas where dojo_id=1;
+
+select * from ninjas where dojo_id=3;
+
+select * from ninjas 
+left join dojos on dojos.id= dojo_id
+order by ninjas.id desc limit 1;
+

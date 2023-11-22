@@ -1,0 +1,15 @@
+use twitter
+select * from users where users.id=3;
+
+select * from follows;
+delete  from follows where id = 2;
+select * from follows;
+
+select *  from tweets;
+update tweets set tweet =' this is a new tweet ' where tweets.user_id=3;
+select * from tweets;
+
+select *  from users;
+insert into users (first_name,last_name,handle,birthday,created_at,updated_at) 
+values('jose','marta','jojo','1996-08-25',now(),now());
+select *  from users;
