@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <title>Add Ninja</title>
+</head>
+<body>
+    <main div class="container p-3">
+        <div class="row align-items-start" >
+            <h1>New Ninja</h1>
+            <form action="/add_ninja/create" method="POST" >
+                <div class="p-3">
+                    <label  class="form-label" for="dojo_name" >Select your Dojo:</label>
+                    <select name="dojo_id">
+                        <option value="">--Please choose a dojo from this list--</option>
+                        {%for dojo in dojos:%}
+                        <option value="{{dojo.id}}">{{dojo.name}}</option> 
+                        {%endfor%}
+                    </select>
+                </div>
+                <div class="p-3" >
+                    <label  class="form-label" for="first_name" >First Name:</label>
+                    <input class="form-control"  type="text" name="first_name" placeholder="Ninja First Name goes here">
+                </div>
+                <div class="p-3" >
+                    <label  class="form-label" for="last_name" >Last Name:</label>
+                    <input class="form-control"  type="text" name="last_name" placeholder="Ninja Last Name goes here">
+                </div>
+                <div class="p-3" >
+                    <label  class="form-label" for="age" >Age:</label>
+                    <input class="form-control"   type="number" min="10" max="100" name="age" placeholder="Ninja age goes here">
+                </div>
+                <div class="p-3">
+                    <input class="btn btn-outline-secondary" type="submit" value="Add Ninja">
+                </div>
+            </form>
+            <div class="p-3">
+                <a href="/"  class="btn btn-outline-secondary" >Home</a>
+            </div>
+        </div>
+        
+    </main>    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+</body>
+</html>
